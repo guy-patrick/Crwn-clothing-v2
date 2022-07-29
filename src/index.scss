@@ -1,10 +1,16 @@
+@font-face {
+  font-family: "OpenSansCondensed";
+  src: local("OpenSansCondensed"),
+    url("./fonts/open-sans-condensed/OpenSans-CondLight.ttf") format("truetype");
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: "OpenSansCondensed";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
