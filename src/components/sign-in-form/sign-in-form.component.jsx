@@ -30,11 +30,8 @@ function SignInForm() {
     event.preventDefault();
 
     try {
-      const userCredential = await signInAuthUserWithEmailAndPassword(
-        email,
-        password
-      );
-      console.log(userCredential);
+      await signInAuthUserWithEmailAndPassword(email, password);
+
       resetFormFields();
     } catch (error) {
       switch (error.code) {
@@ -55,8 +52,7 @@ function SignInForm() {
   };
 
   async function signInWithGoogle() {
-    const { user } = await signInWithGooglePopup();
-    await createUserDocumentFromAuth(user);
+    await signInWithGooglePopup();
   }
 
   return (
