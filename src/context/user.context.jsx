@@ -12,7 +12,7 @@ export const UserContext = createContext({
 
 export const UserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
-  const value = { currentUser, setCurrentUser };
+  const value = { currentUser };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChangedListener((user) => {
@@ -20,7 +20,6 @@ export const UserProvider = ({ children }) => {
         createUserDocumentFromAuth(user);
       }
       setCurrentUser(user);
-      console.log(user);
     });
 
     return unsubscribe;
